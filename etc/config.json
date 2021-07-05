@@ -1,0 +1,13 @@
+{
+    "Basic": {
+        "Cores": 100,
+        "TestCasePath": "./etc/testcase.csv",
+        "Servers": [
+            "10.130.28.35"
+        ]
+    },
+    "Log": {
+        "LogConfigFile": "./etc/seelog.xml",
+        "MinLevel": "Trace"
+    }
+}

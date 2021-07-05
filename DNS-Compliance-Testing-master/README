@@ -1,0 +1,35 @@
+                 DNS Compliance Testing
+
+Provide tools to allow Registries and Registrars (amongst others) to
+check the DNS protocol compliance of the servers they are delegating
+zones to.
+
+The first tool is 'genreport' which, by default, tests the EDNS compliance
+of the delegated servers.  genreport can also be configured to test which
+query types are also handled and other DNS protocol compliance issues.
+
+Testing of servers is needed because every time some extension has
+been used in the DNS, recursive server operators have discovered
+non-compliant authoritative servers, which have to be worked around
+to be able to return answers to the initiating client.
+
+genreport tests both extension that are currently in use and the
+handling of potential future extensions.
+
+genreport is designed to be fast without overloading the delegated
+servers.  e.g. it takes ~14 minutes to test every delegated server
+from the .GOV zone.
+
+genreport requires that libresolve / libbind be available (or be built
+into the C library).
+
+genreport requires OpenSSL to be available.
+
+The man page for genreport provides a number of examples of how it can
+be used.
+
+When building from the git run the following command before following
+INSTALL.  pkgconfig / pkg-config / pkgconf will also need to be installed
+prior to running autoreconf.
+
+		autoreconf -fvi

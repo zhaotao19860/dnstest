@@ -1,0 +1,32 @@
+<seelog  type="asynctimer" asyncinterval="500" minlevel="trace" maxlevel="critical">
+    <outputs formatid="main">
+        <filter levels="trace">
+            <buffered size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/trace.log" datepattern="2006.01.02" maxrolls="3"/>
+            </buffered>
+        </filter>
+		<filter levels="debug">
+            <buffered size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/debug.log" datepattern="2006.01.02" maxrolls="3"/>
+            </buffered>
+        </filter>
+        <filter levels="info">
+            <buffered size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/info.log" datepattern="2006.01.02" maxrolls="3"/>
+            </buffered>
+        </filter>
+        <filter levels="warn">
+            <buffered size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/warn.log" datepattern="2006.01.02" maxrolls="3"/>
+            </buffered>
+        </filter>
+        <filter levels="error,critical">
+            <buffered size="10000" flushperiod="1000">
+                <rollingfile type="date" filename="./logs/error.log" datepattern="2006.01.02" maxrolls="3"/>
+            </buffered>
+        </filter>
+    </outputs>
+    <formats>
+         <format id="main" format="[%Level] %Date %Time %File %Func %Line: %Msg%n"/>
+    </formats>
+</seelog>
