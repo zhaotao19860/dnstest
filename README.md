@@ -10,28 +10,7 @@
 ## 回归测试工具
 
 ### 原理
-```flow
-st=>start: 开始
-op1=>operation: 读取config.json
-op2=>operation: 读取日志配置seelog.xml
-op3=>operation: 读取测试用例testcase.csv
-op4=>operation: 发送用例中的请求
-cond1=>condition: 收到响应？
-op5=>operation: 比较响应与期望结果
-cond2=>condition: 相同？
-op6=>operation: 成功结果+1
-op7=>operation: 失败结果+1
-op8=>operation: 输出成功失败用例数
-cond3=>condition: 用例执行完成？
-e=>end
-st->op1->op2->op3->op4->cond1
-cond1(yes)->op5->cond2
-cond1(no)->op7->cond3
-cond2(yes)->op6->cond3
-cond2(no)->op7->cond3
-cond3(yes)->op8->e
-cond3(no)->op4
-```
+![流程图](./doc/流程图.svg)
 
 ### 安装
 
