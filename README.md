@@ -12,12 +12,23 @@
 ### 原理
 ![流程图](./doc/流程图.svg)
 
-### 安装
-
+### 编译(可跳过)
+不需要编译，直接使用二进制即可。
 ```bash
 # 1. go 版本需要在1.13以上。
 # 2. 编译
-#   go build -mod=vendor
+#   2.1 windows
+    go build -mod=vendor -o dnstest.windows
+#   2.2 linux
+    go build -mod=vendor -o dnstest.linux
+```
+
+### 安装
+```bash
+# windows
+  ln -sf dnstest.windows dnstest 
+# linux
+  ln -sf dnstest.linux dnstest 
 ```
 
 ### 配置
@@ -50,8 +61,8 @@ vim etc/testcase.csv
 也可以像dig一样发单次dns, 参数支持qname/qtype/server/subnet
 例如：
 ```bash
-# ./main -once @10.226.146.245 www.qq.com CNAME
-# ./main -once -p 53102 @10.226.133.100 www.qq.com +subnet=1.1.1.1
+# ./dnstest -once @10.226.146.245 www.qq.com CNAME
+# ./dnstest -once -p 53102 @10.226.133.100 www.qq.com +subnet=1.1.1.1
 ```
 
 ## 合规测试工具

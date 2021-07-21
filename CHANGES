@@ -2,3 +2,6 @@ Revision history of DNSTEST.
 
 1.0.0 2021-06-30 14:55:00+08:00
     -[新功能]初始化版本。
+
+1.0.1 2021-07-21 18:05:00+08:00
+    -[bug]dnstest -once携带subnet时，SourceNetmask默认为0，导致返回出错，现改为32。

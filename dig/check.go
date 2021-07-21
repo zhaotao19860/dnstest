@@ -526,6 +526,7 @@ func digOnce(arg *DigArgs) {
 		WriteTimeout: dnsTimeout,
 		ReadTimeout:  dnsTimeout,
 		EDNSBufSize:  4096,
+		SourceNetmask: 32,
 		Protocol:     "udp",
 		Retry:        1,
 	}
